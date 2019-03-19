@@ -20,8 +20,13 @@ public class TwoActivity extends BaseActivity {
 
         int price = (int) params.get("price");
 
-        btn = findViewById(R.id.route_forward_id);
+        // 设置物理回退键指定跳转的类和参数
+        Map params = new HashMap();
+        params.put("price", 13);
+        setPhysicalBack(OneActivity.class, params);
 
+
+        btn = findViewById(R.id.route_forward_id);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
